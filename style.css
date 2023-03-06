@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+  }
+  .container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  #battery {
+    box-sizing: content-box;
+    height: 7.8em;
+    width: 17.5em;
+    border: 0.6em solid #6024ed;
+    margin: auto;
+    border-radius: 0.6em;
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+  #battery:before {
+    position: absolute;
+    content: "";
+    height: 3em;
+    width: 3em;
+    background-color: #6024ed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: -3em;
+    border-radius: 0 50% 50% 0;
+
+  }
+  #charge {
+    position: absolute;
+    height: 6.5em;
+    width: 16.25em;
+    background-color: #6024ed;
+    top: 0.6em;
+    left: 0.6em;
+  }
+  #charge-level {
+    position: absolute;
+    color: #130146;
+    font-size: 3em;
+    font-weight: 500;
+  }
+  #charging-time {
+    text-align: center;
+    font-size: 1.7em;
+    margin-top: 1.4em;
+  }
+  .active {
+    animation: charge-animation 3s infinite linear;
+  }
+  @keyframes charge-animation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 16.25em;
+    }
+  }
